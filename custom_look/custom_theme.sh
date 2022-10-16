@@ -27,7 +27,7 @@ themes=("${g_themes[@]}" "${l_themes[@]}")
 themes_count=${#themes[@]}
 theme=${themes[$(( ( RANDOM % ${themes_count} )))]}
 echo "$theme" > $FILE_DST
-chown root:$ACTUAL_USER $FILE_DST
+# chown root:$ACTUAL_USER $FILE_DST
 # export CUSTOM_THEME=$theme
 
 sddm_themes=(`ls /usr/share/sddm/themes/`)

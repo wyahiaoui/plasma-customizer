@@ -1,6 +1,21 @@
 #!/bin/bash
 
+FILE_DST="/home/$USER/.config/custom_theme"
+
+change_theme() {
+    themes=(`lookandfeeltool -l`)
+    echo "$themes"
+    themes_count=${#themes[@]}
+    theme=${themes[$(( ( RANDOM % ${themes_count} )))]}
+    echo "$theme" > $FILE_DST
+}
+
+
 CUSTOM_THEME=$(<"/home/wissem/.config/custom_theme")
 
+kdialog --msgbox "agaiiin $CUSTOM_THEME"
 lookandfeeltool -a $CUSTOM_THEME;
 lookandfeeltool -a $CUSTOM_THEME
+
+change_theme
+
