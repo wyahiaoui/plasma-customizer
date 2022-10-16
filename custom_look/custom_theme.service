@@ -1,0 +1,9 @@
+[Unit]
+Description=Theme Customizer
+
+[Service]
+#User=root
+ExecStart=/usr/local/bin/custom_theme.sh
+
+[Install]
+WantedBy=graphical.target

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=/home/wissem/bin/global_theme
+Icon=dialog-scripts
+Name=global_theme
+Path=
+Type=Application
+X-KDE-AutostartScript=true

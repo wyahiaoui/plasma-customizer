@@ -1,0 +1,6 @@
+#!/bin/bash
+
+CUSTOM_THEME=$(<"/home/wissem/.config/custom_theme")
+
+lookandfeeltool -a $CUSTOM_THEME;
+lookandfeeltool -a $CUSTOM_THEME
