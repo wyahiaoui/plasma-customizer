@@ -1,0 +1,6 @@
+[Unit]
+Description=Global theme customizer on timer 
+
+[Service]
+Type=oneshot
+ExecStart=/home/wissem/bin/global_theme

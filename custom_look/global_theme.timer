@@ -1,0 +1,9 @@
+[Unit]
+Description=Time for global theme customizer 
+
+[Timer]
+OnBootSec=15sec
+OnUnitActiveSec=15sec
+
+[Install]
+WantedBy=timers.target
