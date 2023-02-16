@@ -1,7 +1,7 @@
 #!/bin/bash 
 
-ACTUAL_USER="wissem"
-FILE_DST="/home/$ACTUAL_USER/.config/custom_theme"
+USER_HOME=$(eval echo ~$1)
+FILE_DST="$USER_HOME/.config/custom_theme"
 
 theme_to_sddm() {
     if [[ "$theme" == com.github* ]]
@@ -22,7 +22,7 @@ themes_to_sddm() {
 }   
 
 g_themes=(`ls /usr/share/plasma/look-and-feel`) 
-l_themes=(`ls /home/*/.local/share/plasma/look-and-feel`)
+l_themes=(`ls $USER_HOME/.local/share/plasma/look-and-feel`)
 themes=("${g_themes[@]}" "${l_themes[@]}")
 themes_count=${#themes[@]}
 theme=${themes[$(( ( RANDOM % ${themes_count} )))]}
@@ -40,9 +40,9 @@ echo "$current"
 
 if [[ " ${sddm_themes[*]} " =~ " ${current} " ]]; then
     # whatever you want to do when array contains value
-    sed -i "s|Current=.*/Current=$current/g" "/etc/sddm.conf.d/kde_settings.conf"
+    sed -i "s|Current=.*|Current=$current|g" "/etc/sddm.conf.d/kde_settings.conf"
 else 
-    sed -i "s/Current=.*/Current=$sddm_theme/g" "/etc/sddm.conf.d/kde_settings.conf"
+    sed -i "s|Current=.*|Current=$sddm_theme|g" "/etc/sddm.conf.d/kde_settings.conf"
 fi
 
 

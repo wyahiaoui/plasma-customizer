@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/home/wissem/bin/global_theme
+Exec=/.local/bin/global_theme
 Icon=dialog-scripts
 Name=global_theme
 Path=

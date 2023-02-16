@@ -3,7 +3,7 @@ Description=Theme Customizer
 
 [Service]
 #User=root
-ExecStart=/usr/local/bin/custom_theme.sh
+ExecStart=/usr/local/bin/custom_theme.sh wissem
 
 [Install]
 WantedBy=graphical.target
